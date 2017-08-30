@@ -2,10 +2,36 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Friend Finer</title>
+	<title>Friend Finder</title>
+	<link rel="stylesheet" href="reset.css">
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<h2>Survey Questions</h2>
+	<div id="header">
+		<div id="headerTitle"><p id="headerText">Friend Finder</p></div>
+	</div>
+	<div id="nav">
+		<div id="buttonDiv">
+			<div class="navButton" id="leftNavButton"><a href="./api/friends">API Friends List</a></div>
+			<div class="navButton" id="rightNavButton"><a href="https://github.com/Kovachks/Friend-Finder">Github Repo</a></div>
+		</div>	
+	</div>
+	<div id="textContent">
+		<h2>Survey Questions</h2>
+		<h3>About You</h3>
+		<h5>Name (Required)</h5>
+		<input type="text">
+		<h5>Link to Photo Image (Required)</h5>
+		<input type="text">
+		<h3>Question 1</h3>
+		<h5>Test 1</h5>
+		<form action="">
+			<input type="radio" name='1' value=1>1
+			<input type="radio" name='2' value=2>2
+			<input type="radio" name='3' value=3>3
+			<input type="radio" name='4' value=4>4
+			<input type="radio" name='5' value=5>5
+		</form>		
+	</div>
 </body>
 </html>
