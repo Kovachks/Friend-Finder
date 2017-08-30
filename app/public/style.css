@@ -1,25 +1,37 @@
 body {
 	background-color: #cccecd;
 }
-
 #headerText {
 	font-size: 2em;
 	text-align: center;
 	margin: 35px 0;
+	color: #cccecd;
 }
-
 #header {
 	position: relative;
 	border-bottom: 1px solid black;
 	height: 100px;
 }
-
 #headerTitle {
 	position: absolute;
-	left: 75px;
-	background-color: #08cc63;
+	background-color: #ed7a44;
 	height: 100px;
 	width: 250px;
-	margin: 0;
+	margin: 0 75px 0 10%;
 	padding: 0;
+}
+#nav {
+	height: 40px;
+	background-color: #ed7a44;
+}
+#textContent {
+	background-color: white;
+	margin: 50px 75px 0 10%;
+	width: 80%;
+	height: 200px;
+}
+.bodyText {
+	font-size: 30px;
+	margin: 0 5px 0 30px;
+	padding: 15px 0 0 0;
 }
