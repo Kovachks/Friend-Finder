@@ -65,7 +65,6 @@ input {
 #textContainer {
 	width: 90%;
 	margin: 10px 5% 10px 5%;
-
 }
 .bodyText {
 	font-size: 30px;
@@ -77,6 +76,11 @@ input {
 	padding: 15px 15px;
 	background-color: #cccecd;
 }
+#submitButton {
+	font-size: 16px;
+	padding: 15px 40px;
+	background-color: #cccecd;
+}
 .questionHeader {
 	font-size: 35px;
 	margin-bottom: 5px;
@@ -84,4 +88,13 @@ input {
 .questionText {
 	font-size: 20px;
 	margin-bottom: 5px;
+}
+.aboutText {
+	font-size: 28px;
+	margin-bottom: 5px;
+}
+.surveyHeader {
+	font-size: 40px;
+	margin-bottom: 15px;
+	border-bottom: 1px solid #dbdbdb 
 }
