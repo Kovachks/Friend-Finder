@@ -56,7 +56,13 @@ a 	{
 	background-color: white;
 	margin: 50px 10% 0 10%;
 	width: 80%;
-	height: 200px;
+	height: 500px;
+	overflow: auto;
+}
+#textContainer {
+	width: 90%;
+	margin: 10px 5% 10px 5%;
+
 }
 .bodyText {
 	font-size: 30px;
@@ -67,4 +73,10 @@ a 	{
 	margin: 27px 0 0 30px;
 	padding: 15px 15px;
 	background-color: #cccecd;
+}
+.questionHeader {
+	font-size: 35px
+}
+.questionText {
+	font-size: 20px;
 }
