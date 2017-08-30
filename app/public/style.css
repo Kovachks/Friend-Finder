@@ -1,0 +1,25 @@
+body {
+	background-color: #cccecd;
+}
+
+#headerText {
+	font-size: 2em;
+	text-align: center;
+	margin: 35px 0;
+}
+
+#header {
+	position: relative;
+	border-bottom: 1px solid black;
+	height: 100px;
+}
+
+#headerTitle {
+	position: absolute;
+	left: 75px;
+	background-color: #08cc63;
+	height: 100px;
+	width: 250px;
+	margin: 0;
+	padding: 0;
+}
