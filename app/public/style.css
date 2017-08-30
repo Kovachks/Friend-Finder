@@ -5,6 +5,9 @@ a 	{
 	text-decoration: none;
 	color: #cccecd;
 }
+input {
+
+}
 #headerText {
 	font-size: 2em;
 	text-align: center;
@@ -75,8 +78,10 @@ a 	{
 	background-color: #cccecd;
 }
 .questionHeader {
-	font-size: 35px
+	font-size: 35px;
+	margin-bottom: 5px;
 }
 .questionText {
 	font-size: 20px;
+	margin-bottom: 5px;
 }
