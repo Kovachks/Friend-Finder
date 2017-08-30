@@ -9,7 +9,6 @@ body {
 }
 #header {
 	position: relative;
-	border-bottom: 1px solid black;
 	height: 100px;
 }
 #headerTitle {
@@ -24,9 +23,22 @@ body {
 	height: 40px;
 	background-color: #ed7a44;
 }
+.navButton {
+	height: 40px;
+	width: 100px;	
+}
+#leftNavButton {
+	position: absolute;
+	left: 10%;
+	border-left: 1px solid black
+}
+#rightNavButton {
+	position: relative;
+	left: 20%;
+}
 #textContent {
 	background-color: white;
-	margin: 50px 75px 0 10%;
+	margin: 50px 10% 0 10%;
 	width: 80%;
 	height: 200px;
 }
@@ -34,4 +46,8 @@ body {
 	font-size: 30px;
 	margin: 0 5px 0 30px;
 	padding: 15px 0 0 0;
+}
+#surveyButton {
+	margin: 27px 0 0 30px;
+	padding: 15px 15px;
 }
