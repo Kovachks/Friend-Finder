@@ -1,137 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Friend Finder</title>
-	<link rel="stylesheet" href="reset.css">
-	<link rel="stylesheet" href="style.css">
-</head>
-<body>
-	<div id="header">
-		<div id="headerTitle"><p id="headerText">Friend Finder</p></div>
-	</div>
-	<div id="nav">
-		<div id="buttonDiv">
-			<div class="navButton" id="leftNavButton"><a href="./api/friends">API Friends List</a></div>
-			<div class="navButton" id="rightNavButton"><a href="https://github.com/Kovachks/Friend-Finder">Github Repo</a></div>
-		</div>	
-	</div>
-	<div id="textContent">
-		<div id="textContainer">
-			<h2 class="surveyHeader">Survey Questions</h2>
-			<h3 class="aboutText">About You</h3>
-			<h5 class="questionText">Name (Required)</h5>
-			<input type="text">
-			<br>
-			<br>
-			<h5 class="questionText">Link to Photo Image (Required)</h5>
-			<input type="text">
-			<br>
-			<br>
-			<h3 class="questionHeader">Question 1</h3>
-			<h5 class="questionText">Your mind is always buzzing with unexplored ideas and plans.</h5>
-			<form action="">
-				<input type="radio" name='1' value=1>1
-				<input type="radio" name='2' value=2>2
-				<input type="radio" name='3' value=3>3
-				<input type="radio" name='4' value=4>4
-				<input type="radio" name='5' value=5>5
-			</form>
-			<br>
-			<h3 class="questionHeader">Question 2</h3>
-			<h5 class="questionText">Generally speaking, you rely more on your experience than your imagination.</h5>
-			<form action="">
-				<input type="radio" name='1' value=1>1
-				<input type="radio" name='2' value=2>2
-				<input type="radio" name='3' value=3>3
-				<input type="radio" name='4' value=4>4
-				<input type="radio" name='5' value=5>5
-			</form>
-			<br>
-			<h3 class="questionHeader">Question 3</h3>
-			<h5 class="questionText">You find it easy to stay relaxed and focused even when there is some pressure.</h5>
-			<form action="">
-				<input type="radio" name='1' value=1>1
-				<input type="radio" name='2' value=2>2
-				<input type="radio" name='3' value=3>3
-				<input type="radio" name='4' value=4>4
-				<input type="radio" name='5' value=5>5
-			</form>
-			<br>	
-			<h3 class="questionHeader">Question 4</h3>
-			<h5 class="questionText">You rarely do someting just out of sheer curiosity</h5>
-			<form action="">
-				<input type="radio" name='1' value=1>1
-				<input type="radio" name='2' value=2>2
-				<input type="radio" name='3' value=3>3
-				<input type="radio" name='4' value=4>4
-				<input type="radio" name='5' value=5>5
-			</form>
-			<br>	
-			<h3 class="questionHeader">Question 5</h3>
-			<h5 class="questionText">People can rarely upset you.</h5>
-			<form action="">
-				<input type="radio" name='1' value=1>1
-				<input type="radio" name='2' value=2>2
-				<input type="radio" name='3' value=3>3
-				<input type="radio" name='4' value=4>4
-				<input type="radio" name='5' value=5>5
-			</form>
-			<br>	
-			<h3 class="questionHeader">Question 6</h3>
-			<h5 class="questionText">It is often difficult for you to relate to other people's feelings.</h5>
-			<form action="">
-				<input type="radio" name='1' value=1>1
-				<input type="radio" name='2' value=2>2
-				<input type="radio" name='3' value=3>3
-				<input type="radio" name='4' value=4>4
-				<input type="radio" name='5' value=5>5
-			</form>
-			<br>	
-			<h3 class="questionHeader">Question 7</h3>
-			<h5 class="questionText">In a discussion, truth should be more important than people's sensitivities.</h5>
-			<form action="">
-				<input type="radio" name='1' value=1>1
-				<input type="radio" name='2' value=2>2
-				<input type="radio" name='3' value=3>3
-				<input type="radio" name='4' value=4>4
-				<input type="radio" name='5' value=5>5
-			</form>
-			<br>	
-			<h3 class="questionHeader">Question 8</h3>
-			<h5 class="questionText">You think that everyone's views should be respected regardless of whether they are supported by facts or not.</h5>
-			<form action="">
-				<input type="radio" name='1' value=1>1
-				<input type="radio" name='2' value=2>2
-				<input type="radio" name='3' value=3>3
-				<input type="radio" name='4' value=4>4
-				<input type="radio" name='5' value=5>5
-			</form>	
-			<br>
-			<h3 class="questionHeader">Question 9</h3>
-			<h5 class="questionText">You rarely get carried away by fantasies and ideas.</h5>
-			<form action="">
-				<input type="radio" name='1' value=1>1
-				<input type="radio" name='2' value=2>2
-				<input type="radio" name='3' value=3>3
-				<input type="radio" name='4' value=4>4
-				<input type="radio" name='5' value=5>5
-			</form>	
-			<br>
-			<h3 class="questionHeader">Question 10</h3>
-			<h5 class="questionText">You feel more energetic after spending time with a group of people.</h5>
-			<form action="">
-				<input type="radio" name='1' value=1>1
-				<input type="radio" name='2' value=2>2
-				<input type="radio" name='3' value=3>3
-				<input type="radio" name='4' value=4>4
-				<input type="radio" name='5' value=5>5
-			</form>
-			<br>
-			<form action="">
-				<button id="submitButton">Submit</button>
-			</form>
-		</div>						
-	</div>
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<title>Friend Finder</title>
+		<link rel="stylesheet" href="reset.css">
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<div id="header">
+			<div id="headerTitle"><p id="headerText">Friend Finder</p></div>
+		</div>
+		<div id="nav">
+			<ul id="buttonDiv">
+				<li class="navButton" id="leftNavButton"><a href="./home.html" class="navLink">Home</a></li>
+				<li class="navButton" id="centerNavButton"><a href="./api/friends" class="navLink">API Friends List</a></li>
+				<li class="navButton" id="rightNavButton"><a href="https://github.com/Kovachks/Friend-Finder" class="navLink">Github Repo</a></li>
+			</ul>	
+		</div>
+		<div id="textContent">
+			<div id="textContainer">
+				<h2 class="surveyHeader">Survey Questions</h2>
+				<h3 class="aboutText">About You</h3>
+				<h5 class="questionText">Name (Required)</h5>
+				<input type="text">
+				<br>
+				<br>
+				<h5 class="questionText">Link to Photo Image (Required)</h5>
+				<input type="text">
+				<br>
+				<br>
+				<h3 class="questionHeader">Question 1</h3>
+				<h5 class="questionText">Your mind is always buzzing with unexplored ideas and plans.</h5>
+				<form action="">
+					<input type="radio" name='1' value=1>1 
+					<input type="radio" name='2' value=2>2
+					<input type="radio" name='3' value=3>3
+					<input type="radio" name='4' value=4>4
+					<input type="radio" name='5' value=5>5
+					<p>1 - Strongly Disagree; 5 - Strong Agree</p>
+				</form>
+				<br>
+				<h3 class="questionHeader">Question 2</h3>
+				<h5 class="questionText">Generally speaking, you rely more on your experience than your imagination.</h5>
+				<form action="">
+					<input type="radio" name='1' value=1>1
+					<input type="radio" name='2' value=2>2
+					<input type="radio" name='3' value=3>3
+					<input type="radio" name='4' value=4>4
+					<input type="radio" name='5' value=5>5
+					<p>1 - Strongly Disagree; 5 - Strong Agree</p>					
+				</form>
+				<br>
+				<h3 class="questionHeader">Question 3</h3>
+				<h5 class="questionText">You find it easy to stay relaxed and focused even when there is some pressure.</h5>
+				<form action="">
+					<input type="radio" name='1' value=1>1
+					<input type="radio" name='2' value=2>2
+					<input type="radio" name='3' value=3>3
+					<input type="radio" name='4' value=4>4
+					<input type="radio" name='5' value=5>5
+					<p>1 - Strongly Disagree; 5 - Strong Agree</p>					
+				</form>
+				<br>	
+				<h3 class="questionHeader">Question 4</h3>
+				<h5 class="questionText">You rarely do someting just out of sheer curiosity</h5>
+				<form action="">
+					<input type="radio" name='1' value=1>1
+					<input type="radio" name='2' value=2>2
+					<input type="radio" name='3' value=3>3
+					<input type="radio" name='4' value=4>4
+					<input type="radio" name='5' value=5>5
+					<p>1 - Strongly Disagree; 5 - Strong Agree</p>					
+				</form>
+				<br>	
+				<h3 class="questionHeader">Question 5</h3>
+				<h5 class="questionText">People can rarely upset you.</h5>
+				<form action="">
+					<input type="radio" name='1' value=1>1
+					<input type="radio" name='2' value=2>2
+					<input type="radio" name='3' value=3>3
+					<input type="radio" name='4' value=4>4
+					<input type="radio" name='5' value=5>5
+					<p>1 - Strongly Disagree; 5 - Strong Agree</p>					
+				</form>
+				<br>	
+				<h3 class="questionHeader">Question 6</h3>
+				<h5 class="questionText">It is often difficult for you to relate to other people's feelings.</h5>
+				<form action="">
+					<input type="radio" name='1' value=1>1
+					<input type="radio" name='2' value=2>2
+					<input type="radio" name='3' value=3>3
+					<input type="radio" name='4' value=4>4
+					<input type="radio" name='5' value=5>5
+					<p>1 - Strongly Disagree; 5 - Strong Agree</p>					
+				</form>
+				<br>	
+				<h3 class="questionHeader">Question 7</h3>
+				<h5 class="questionText">In a discussion, truth should be more important than people's sensitivities.</h5>
+				<form action="">
+					<input type="radio" name='1' value=1>1
+					<input type="radio" name='2' value=2>2
+					<input type="radio" name='3' value=3>3
+					<input type="radio" name='4' value=4>4
+					<input type="radio" name='5' value=5>5
+					<p>1 - Strongly Disagree; 5 - Strong Agree</p>					
+				</form>
+				<br>	
+				<h3 class="questionHeader">Question 8</h3>
+				<h5 class="questionText">You think that everyone's views should be respected regardless of whether they are supported by facts or not.</h5>
+				<form action="">
+					<input type="radio" name='1' value=1>1
+					<input type="radio" name='2' value=2>2
+					<input type="radio" name='3' value=3>3
+					<input type="radio" name='4' value=4>4
+					<input type="radio" name='5' value=5>5
+					<p>1 - Strongly Disagree; 5 - Strong Agree</p>					
+				</form>	
+				<br>
+				<h3 class="questionHeader">Question 9</h3>
+				<h5 class="questionText">You rarely get carried away by fantasies and ideas.</h5>
+				<form action="">
+					<input type="radio" name='1' value=1>1
+					<input type="radio" name='2' value=2>2
+					<input type="radio" name='3' value=3>3
+					<input type="radio" name='4' value=4>4
+					<input type="radio" name='5' value=5>5
+					<p>1 - Strongly Disagree; 5 - Strong Agree</p>					
+				</form>	
+				<br>
+				<h3 class="questionHeader">Question 10</h3>
+				<h5 class="questionText">You feel more energetic after spending time with a group of people.</h5>
+				<form action="">
+					<input type="radio" name='1' value=1>1
+					<input type="radio" name='2' value=2>2
+					<input type="radio" name='3' value=3>3
+					<input type="radio" name='4' value=4>4
+					<input type="radio" name='5' value=5>5
+					<p>1 - Strongly Disagree; 5 - Strong Agree</p>					
+				</form>
+				<br>
+				<form action="">
+					<button id="submitButton">Submit</button>
+				</form>
+			</div>						
+		</div>
+	</body>
 </html>

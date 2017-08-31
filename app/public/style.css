@@ -32,15 +32,22 @@ input {
 }
 #buttonDiv{
 	position: relative;
-	width: 200px;
-	height: 40px;
+	display: inline-block;
+	width: 250px;
+	height: 50px;
 	left: 10%;
 }
 .navButton {
-	height: 30px;
-	width: 105px;	
-	padding: 10px 10px;
+	line-height: 50px;
+	height: 50px;
+	width: 125px;	
 	text-align: center;
+	display: inline-block;
+}
+.navLink {
+	display: inline-block;
+	width: 125px;
+	height: 50px;
 }
 .navButton:hover {
 	background-color: #dd6933;
@@ -49,11 +56,22 @@ input {
 #leftNavButton {
 	position: absolute;
 }
-#rightNavButton {
+#centerNavButton {
 	position: absolute;
 	left: 125px;
-	height: 25px;
-	padding: 15px 10px 10px 10px;	
+	height: 50px;
+}
+#rightNavButton {
+	position: absolute;
+	left: 250px;
+	height: 50px;
+}
+#homeContent {
+	background-color: white;
+	margin: 50px 10% 0 10%;
+	width: 80%;
+	height: 200px;
+	overflow: auto;
 }
 #textContent {
 	background-color: white;
