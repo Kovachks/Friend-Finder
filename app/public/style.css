@@ -69,7 +69,7 @@ input {
 #homeContent {
 	background-color: white;
 	margin: 50px 10% 0 10%;
-	width: 80%;
+	width: 700px;
 	height: 200px;
 	overflow: auto;
 }
