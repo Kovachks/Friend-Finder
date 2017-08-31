@@ -5,7 +5,7 @@ var path = require("path");
 var app = express();
 var PORT = process.env.PORT || 3000;
 
-var newUser = [{}];
+var newUser = [];
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
