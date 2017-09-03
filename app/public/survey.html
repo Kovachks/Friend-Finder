@@ -10,8 +10,29 @@
   				integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
   				crossorigin="anonymous">
   		</script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	</head>
 	<body>
+	<!-- Modal -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  	<div class="modal-dialog" role="document">
+	    	<div class="modal-content">
+	      		<div class="modal-header">
+	        		<h5 class="modal-title" id="exampleModalLabel">Best Match</h5>
+	        		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          			<span aria-hidden="true">&times;</span>
+	        		</button>
+	      		</div>
+	      		<div class="modal-body">
+	        		<h2 id="">Keith Kovach</h2>
+	        		<img src="https://i.vimeocdn.com/portrait/58832_300x300" alt="">
+	      		</div>
+	      		<div class="modal-footer">
+	        		<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+	      		</div>
+	    	</div>
+	  	</div>
+	</div>	
 		<div id="header">
 			<div id="headerTitle"><p id="headerText">Friend Finder</p></div>
 		</div>
@@ -20,7 +41,7 @@
 				<li class="navButton" id="leftNavButton"><a href="./home.html" class="navLink">Home</a></li>
 				<li class="navButton" id="centerNavButton"><a href="./api/friends" class="navLink">API Friends List</a></li>
 				<li class="navButton" id="rightNavButton"><a href="https://github.com/Kovachks/Friend-Finder" class="navLink">Github Repo</a></li>
-			</ul>	
+			</ul>
 		</div>
 		<div id="textContent">
 			<div id="textContainer">
@@ -145,9 +166,9 @@
 				</form>
 				<br>
 				<form action="">
-					<button id="submitButton">Submit</button>
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" id="submitButton">Submit Survey</button>
 				</form>
-			</div>						
+			</div>				
 		</div>
 		<script type="text/javascript">
 			$("#submitButton").on("click", function(event) {
