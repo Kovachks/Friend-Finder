@@ -2,6 +2,7 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
 
+
 var app = express();
 var PORT = process.env.PORT || 3000;
 
@@ -28,6 +29,7 @@ app.get("/survey", function(req, res) {
 	res.sendFile(path.join(__dirname, "/app/public/survey.html"))
 })
 app.post("/api/new", function(req, res) {
+	console.log("RESPONSE: " + res)
 	totalDifferenceArray = [];
 	var newUser2 = req.body;
 	console.log(newUser2);
@@ -43,12 +45,16 @@ app.post("/api/new", function(req, res) {
 	console.log("Total Difference Array: " + totalDifferenceArray);
 	totalDifference = 0;
 	}
-	var closeUserValue = Math.min.apply(null, totalDifferenceArray);
-	console.log("close User Value: " + closeUserValue)
-	var closeUser = totalDifferenceArray.indexOf(closeUserValue)
-	console.log("Closest user: " + closeUser);
-	console.log("Name of Closest User " + newUser[closeUser].name)
-	console.log("image of Closest User " + newUser[closeUser].photo)	
+	exports.closestUser = function(closeUserName, closeUserImage) {
+		var closeUserValue = Math.min.apply(null, totalDifferenceArray);
+		console.log("close User Value: " + closeUserValue)
+		var closeUser = totalDifferenceArray.indexOf(closeUserValue)
+		console.log("Closest user: " + closeUser);
+		closeUserName = newUser[closeUser].name;
+		closeUserImage = newUser[closeUser].photo;
+		console.log("Name of Closest User " + newUser[closeUser].name)
+		console.log("image of Closest User " + newUser[closeUser].photo)
+	}	
 })
 app.listen(PORT, function() {
 	console.log("App listening on PORT " + PORT)

@@ -24,8 +24,8 @@
 	        		</button>
 	      		</div>
 	      		<div class="modal-body">
-	        		<h2 id="">Keith Kovach</h2>
-	        		<img src="https://i.vimeocdn.com/portrait/58832_300x300" alt="">
+	        		<h2 id="closeName">Keith Kovach</h2>
+	        		<img id="closeImage" src="https://i.vimeocdn.com/portrait/58832_300x300" alt="">
 	      		</div>
 	      		<div class="modal-footer">
 	        		<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -171,6 +171,7 @@
 			</div>				
 		</div>
 		<script type="text/javascript">
+		var  = require("../../server.js")
 			$("#submitButton").on("click", function(event) {
 				event.preventDefault();
 				var newUser = {
@@ -183,9 +184,12 @@
 					newUser.score.push(($(this).val()))
 					}
 				})
-				$.post("/api/new", newUser)
+				$.post("/api/new", newUser, function(data) {
+					$("#closeName").text(data.name);
+					$*("#closeImage").attr("src", data.photo);
+				})
 				.done(function(data) {
-					console.log(data);					
+					console.log("DATA " + data);					
 				})
 			})
 		</script>
