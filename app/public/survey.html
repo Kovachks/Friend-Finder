@@ -14,7 +14,7 @@
 	</head>
 	<body>
 	<!-- Modal -->
-	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	  	<div class="modal-dialog" role="document">
 	    	<div class="modal-content">
 	      		<div class="modal-header">
@@ -32,7 +32,7 @@
 	      		</div>
 	    	</div>
 	  	</div>
-	</div>	
+	</div>	 -->
 		<div id="header">
 			<div id="headerTitle"><p id="headerText">Friend Finder</p></div>
 		</div>
@@ -171,7 +171,6 @@
 			</div>				
 		</div>
 		<script type="text/javascript">
-		var  = require("../../server.js")
 			$("#submitButton").on("click", function(event) {
 				event.preventDefault();
 				var newUser = {
@@ -184,12 +183,9 @@
 					newUser.score.push(($(this).val()))
 					}
 				})
-				$.post("/api/new", newUser, function(data) {
-					$("#closeName").text(data.name);
-					$*("#closeImage").attr("src", data.photo);
-				})
+				$.post("/api/new", newUser)
 				.done(function(data) {
-					console.log("DATA " + data);					
+					console.log(data);					
 				})
 			})
 		</script>

@@ -19,14 +19,13 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 app.use(express.static(__dirname + "/app/public"))
 
-app.get("/", function(req, res) {
-	res.sendFile(path.join(__dirname, "/app/public/home.html"))
-})
+var routes = require("./app/routing/htmlRoutes.js");
+
+app.use("/", routes);
+
+
 app.get("/api/friends", function(req, res) {
 	res.json(newUser);
-})
-app.get("/survey", function(req, res) {
-	res.sendFile(path.join(__dirname, "/app/public/survey.html"))
 })
 app.post("/api/new", function(req, res) {
 	console.log("RESPONSE: " + res)
@@ -45,16 +44,19 @@ app.post("/api/new", function(req, res) {
 	console.log("Total Difference Array: " + totalDifferenceArray);
 	totalDifference = 0;
 	}
-	exports.closestUser = function(closeUserName, closeUserImage) {
-		var closeUserValue = Math.min.apply(null, totalDifferenceArray);
-		console.log("close User Value: " + closeUserValue)
-		var closeUser = totalDifferenceArray.indexOf(closeUserValue)
-		console.log("Closest user: " + closeUser);
-		closeUserName = newUser[closeUser].name;
-		closeUserImage = newUser[closeUser].photo;
-		console.log("Name of Closest User " + newUser[closeUser].name)
-		console.log("image of Closest User " + newUser[closeUser].photo)
-	}	
+	var closeUserValue = Math.min.apply(null, totalDifferenceArray);
+	console.log("close User Value: " + closeUserValue)
+	var closeUser = totalDifferenceArray.indexOf(closeUserValue)
+	console.log("Closest user: " + closeUser);
+	var closeUserName = newUser[closeUser].name;
+	var closeUserImage = newUser[closeUser].photo;
+	var closeUserData = [];
+	closeUserData.push(closeUserName);
+	closeUserData.push(closeUserImage);
+	console.log("Closest User Name/Image: " + closeUserData)
+	console.log("Name of Closest User " + closeUserData[0])
+	console.log("image of Closest User " + closeUserData[1])
+	module.exports = closeUserData;
 })
 app.listen(PORT, function() {
 	console.log("App listening on PORT " + PORT)
