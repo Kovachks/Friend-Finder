@@ -76,14 +76,14 @@ input {
 }
 #textContent {
 	background-color: white;
-	margin: 50px 10% 0 10%;
+	margin: 50px 10% 100px 10%;
 	width: 80%;
 	height: 500px;
 	overflow: auto;
 }
 #textContainer {
 	width: 90%;
-	margin: 10px 5% 10px 5%;
+	margin: 10px 5% 25px 5%;
 }
 .bodyText {
 	font-size: 30px;
