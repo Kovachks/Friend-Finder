@@ -21,7 +21,6 @@ module.exports = function(app){
 	app.get("/api/friends", function(req, res) {
 		res.json(newUser);
 	});
-
 	app.post("/api/new", function(req, res) {
 		console.log("RESPONSE: " + res)
 		totalDifferenceArray = [];
@@ -51,6 +50,5 @@ module.exports = function(app){
 		console.log("Closest User Name/Image: " + closeUserData)
 		console.log("Name of Closest User " + closeUserData[0])
 		console.log("image of Closest User " + closeUserData[1])
-		module.exports = closeUserData;
 	})
 }

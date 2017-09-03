@@ -15,8 +15,7 @@ require("./app/routing/htmlRoutes.js")(app);
 
 require("./app/routing/apiRoutes.js")(app);
 
-// app.use(express.static(__dirname + "/app/public"));
-
+app.use(express.static(__dirname + "/app/public"));
 // app.use("/api/friends", apiRoutes);
 
 // app.use("/", routes);
