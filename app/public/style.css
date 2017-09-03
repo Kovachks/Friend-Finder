@@ -29,6 +29,7 @@ input {
 #nav {
 	height: 50px;
 	background-color: #ed7a44;
+	border-bottom: 2px solid grey;
 }
 #buttonDiv{
 	position: relative;

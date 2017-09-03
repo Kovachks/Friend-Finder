@@ -9,6 +9,8 @@ var totalDifference = 0;
 
 var newUser = [];
 
+var totalDifferenceArray = [];
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
@@ -26,6 +28,7 @@ app.get("/survey", function(req, res) {
 	res.sendFile(path.join(__dirname, "/app/public/survey.html"))
 })
 app.post("/api/new", function(req, res) {
+	totalDifferenceArray = [];
 	var newUser2 = req.body;
 	console.log(newUser2);
 	newUser.push(newUser2);
@@ -35,9 +38,17 @@ app.post("/api/new", function(req, res) {
 		for (var g = 0; g < 10; g += 1) {
 			totalDifference += Math.abs(newUser2.score[g] - newUser[i].score[g])
 		}
-	console.log(totalDifference)
-	totalDifference = 0
+	console.log("Total Difference: " + totalDifference);
+	totalDifferenceArray.push(totalDifference);
+	console.log("Total Difference Array: " + totalDifferenceArray);
+	totalDifference = 0;
 	}
+	var closeUserValue = Math.min.apply(null, totalDifferenceArray);
+	console.log("close User Value: " + closeUserValue)
+	var closeUser = totalDifferenceArray.indexOf(closeUserValue)
+	console.log("Closest user: " + closeUser);
+	console.log("Name of Closest User " + newUser[closeUser].name)
+	console.log("image of Closest User " + newUser[closeUser].photo)	
 })
 app.listen(PORT, function() {
 	console.log("App listening on PORT " + PORT)
