@@ -24,7 +24,7 @@
 	        		</button>
 	      		</div>
 	      		<div class="modal-body">
-	        		<h2 id="closeName">Keith Kovach</h2>
+	        		<h2 id="closeName"></h2>
 	        		<img id="closeImage" src="https://i.vimeocdn.com/portrait/58832_300x300" alt="">
 	      		</div>
 	      		<div class="modal-footer">
@@ -166,7 +166,7 @@
 				</form>
 				<br>
 				<form action="">
-					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" id="submitButton">Submit Survey</button>
+					<button type="button" class="btn btn-primary" data-target="#exampleModal" id="submitButton">Submit Survey</button>
 				</form>
 			</div>				
 		</div>
@@ -183,9 +183,14 @@
 					newUser.score.push(($(this).val()))
 					}
 				})
-				$.post("/api/new", newUser)
+				$.post("/api/friends", newUser)
 				.done(function(data) {
-					console.log(data);					
+					if (data === false) {
+						console.log("no data")
+					}
+					console.log("Close User: " + data)
+					$("#closeName").text(data[0]);
+					$("#exampleModal").modal('toggle')	
 				})
 			})
 		</script>
