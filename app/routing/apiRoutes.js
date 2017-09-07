@@ -2,6 +2,8 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
+var fs = require('fs')
+
 
 //Creating variable in which to use Express
 var app = express();
@@ -42,6 +44,9 @@ module.exports = function(app){
 
 		//Pushing user submission to the consolidated user array
 		newUser.push(newUser2);
+
+		//Writing JSON object to the friends.js file
+		fs.writeFile("app/data/friends.js", JSON.stringify(newUser, null, 2))
 
 		//Beginning loop to find the difference between each individual answer for each unique user
 		for (var i = 0; i < newUser.length - 1; i += 1) {
