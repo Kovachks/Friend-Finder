@@ -41,14 +41,21 @@ a {
 	width: 125px;	
 	text-align: center;
 	display: inline-block;
+	text-decoration: none;
 }
 .navLink {
 	display: inline-block;
 	width: 125px;
 	height: 50px;
+	text-decoration: none;
+}
+.navLink:hover {
+	text-decoration: none;
+	color: #cccecd;
 }
 .navButton:hover {
 	background-color: #dd6933;
+	text-decoration: none;
 }
 
 #leftNavButton {
