@@ -1,12 +1,9 @@
 body {
 	background-color: #cccecd;
 }
-a 	{
+a {
 	text-decoration: none;
 	color: #cccecd;
-}
-input {
-
 }
 #headerText {
 	font-size: 2em;

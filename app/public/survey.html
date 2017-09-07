@@ -3,39 +3,54 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Friend Finder</title>
+
+		<!-- Reset CSS Sheet -->
 		<link rel="stylesheet" href="reset.css">
+
+		<!-- Bootstrap sheet for Modal -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">	
+		
+		<!-- Normal Style Sheet -->
 		<link rel="stylesheet" href="style.css">
+
+		<!-- Link to Jquery -->
 		<script src="https://code.jquery.com/jquery-3.2.1.js"
   				integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
   				crossorigin="anonymous">
   		</script>
+
+  		<!-- Link to Bootstrap Scripts -->
   		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	</head>
 	<body>
-	<!-- Modal -->
-	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	  	<div class="modal-dialog" role="document">
-	    	<div class="modal-content">
-	      		<div class="modal-header">
-	        		<h5 class="modal-title" id="exampleModalLabel">Best Match</h5>
-	        		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-	          			<span aria-hidden="true">&times;</span>
-	        		</button>
-	      		</div>
-	      		<div class="modal-body">
-	        		<h2 id="closeName"></h2>
-	        		<img id="closeImage" src="https://i.vimeocdn.com/portrait/58832_300x300" alt="">
-	      		</div>
-	      		<div class="modal-footer">
-	        		<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-	      		</div>
-	    	</div>
-	  	</div>
-	</div>	
+
+		<!-- Modal -->
+		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  	<div class="modal-dialog" role="document">
+		    	<div class="modal-content">
+		      		<div class="modal-header">
+		        		<h5 class="modal-title" id="exampleModalLabel">Best Match</h5>
+		        		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          			<span aria-hidden="true">&times;</span>
+		        		</button>
+		      		</div>
+		      		<div class="modal-body">
+		        		<h2 id="closeName"></h2>
+		        		<img id="closeImage" src="" alt="" style="width:250px; height:250px">
+		      		</div>
+		      		<div class="modal-footer">
+		        		<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		      		</div>
+		    	</div>
+		  	</div>
+		</div>
+
+		<!-- Header -->
 		<div id="header">
 			<div id="headerTitle"><p id="headerText">Friend Finder</p></div>
 		</div>
+
+		<!-- Nav Bar -->
 		<div id="nav">
 			<ul id="buttonDiv">
 				<li class="navButton" id="leftNavButton"><a href="./home.html" class="navLink">Home</a></li>
@@ -43,6 +58,8 @@
 				<li class="navButton" id="rightNavButton"><a href="https://github.com/Kovachks/Friend-Finder" class="navLink">Github Repo</a></li>
 			</ul>
 		</div>
+
+		<!-- Container Containing all of the questions -->
 		<div id="textContent">
 			<div id="textContainer">
 				<h2 class="surveyHeader">Survey Questions</h2>
@@ -165,31 +182,52 @@
 					<p>1 - Strongly Disagree; 5 - Strong Agree</p>					
 				</form>
 				<br>
+
+				<!-- Submit Button -->
 				<form action="">
 					<button type="button" class="btn btn-primary" data-target="#exampleModal" id="submitButton">Submit Survey</button>
 				</form>
 			</div>				
 		</div>
+
+		<!-- Script for submitting information to API -->
 		<script type="text/javascript">
+
+			// On click handler for submit button
 			$("#submitButton").on("click", function(event) {
 				event.preventDefault();
+				
+				// Variable for storing the users data
 				var newUser = {
 					name: $("#name").val().trim(),
 					photo: $("#userPhoto").val().trim(),
 					score: []
 				}
+				// Grabbing every checked radio button value and pushing said value to the score array
 				$("input:radio").each(function(){
 					if ($(this).is(':checked') === true) {
 					newUser.score.push(($(this).val()))
 					}
 				})
+
+				// Posting the users data to api/friends
 				$.post("/api/friends", newUser)
+
+				//After post is complete continue to Modal update
 				.done(function(data) {
+
+					//If there is no data console log "no data"
 					if (data === false) {
 						console.log("no data")
 					}
-					console.log("Close User: " + data)
+
+					//Updating the name section of the modal with the closest matched users name
 					$("#closeName").text(data[0]);
+
+					//Updating the image section of the modal with the closest matched users image
+					$("#closeImage").attr("src", data[1]);
+
+					//Toggling the modal in order to show the closest users information
 					$("#exampleModal").modal('toggle')	
 				})
 			})
